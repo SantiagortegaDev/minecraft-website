@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santiago Ortega</title>
+    <style>
+        body {
+  margin: 0;
+}
+
+.scene {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  perspective: 600px;
+  z-index: -1;
+  pointer-events: none;
+  background: #000;
+}
+
+.cube {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1200px;
+  height: 1200px;
+  margin: -600px 0 0 -600px;
+  transform-style: preserve-3d;
+  animation: girar 90s linear infinite;
+  will-change: transform;
+}
+
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  backface-visibility: hidden;
+}
+
+.c0 { background-image: url(0.webp); transform: rotateY(0deg)   translateZ(-600px); }
+.c1 { background-image: url(1.webp); transform: rotateY(-90deg) translateZ(-600px); }
+.c2 { background-image: url(2.webp); transform: rotateY(180deg) translateZ(-600px); }
+.c3 { background-image: url(3.webp); transform: rotateY(90deg)  translateZ(-600px); }
+.c4 { background-image: url(4.webp); transform: rotateX(-90deg) translateZ(-600px); }
+.c5 { background-image: url(5.webp); transform: rotateX(90deg)  translateZ(-600px); }
+
+@keyframes girar {
+  from { transform: translateZ(600px) rotateY(0deg); }
+  to   { transform: translateZ(600px) rotateY(360deg); }
+}
+
+.content {
+  position: relative;
+  color: white;
+}
+    </style>
+</head>
+
+<body>
+
+  <div class="scene">
+    <div class="cube">
+      <div class="face c0"></div>
+      <div class="face c1"></div>
+      <div class="face c2"></div>
+      <div class="face c3"></div>
+      <div class="face c4"></div>
+      <div class="face c5"></div>
+    </div>
+  </div>
+
+  <main class="content">
+    <h1>test text</h1>
+    <p>description</p>
+  </main>
+
+</body>
+
+</html>
