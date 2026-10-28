@@ -9,6 +9,7 @@
         @font-face {
             font-family: Minecraftia;
             src: url(Minecraftia.ttf) format('truetype');
+
         }
 
         * {
@@ -34,15 +35,16 @@
         }
 
         .content {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-            color: white;
-            text-shadow: 2px 2px 0 #000;
-        }
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: safe center;
+  align-items: center;
+  gap: 8px;
+  padding: 2rem 1rem;
+  color: white;
+  text-shadow: 2px 2px 0 #000;
+}
 
         .buttonmc {
             display: block;
@@ -58,14 +60,21 @@
         }
 
         .buttonmc span {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 100%;
-            padding-top: 0.3em;
-            box-shadow: inset -2px -4px #0006, inset 2px 2px #fff7;
-        }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    line-height: 1;
+    padding-top: 0.01em;
+    box-shadow: inset -2px -4px #0006, inset 2px 2px #fff7;
+}
+
+@supports (-moz-appearance: none) {
+    .buttonmc span {
+        padding-top: 0.3em;
+    }
+}
 
         .buttonmc:hover span {
             background: rgba(100, 100, 255, 0.45);
@@ -100,6 +109,22 @@
   object-fit: contain;
   image-rendering: pixelated;
 }
+.section a:not(.buttonmc) {
+  color: #5555ff;
+  text-decoration: none;
+  border-bottom: 2px solid #5555ff;
+}
+
+.section a:not(.buttonmc):hover {
+  color: #8c8cff;
+}
+.list {
+  width: min(90%, 600px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+}
     </style>
 </head>
 
@@ -113,7 +138,7 @@
         <a class="buttonmc" href="#about"><span>About me</span></a>
         <a class="buttonmc" href="#projects"><span>Projects</span></a>
         <a class="buttonmc" href="#items"><span>Favorite items</span></a>
-        <div class="fila" style="display: flex; padding-top: 1%;
+        <div class="row" style="display: flex; padding-top: 1%;
   gap: 15px;">
             <a class="buttonmc" style="width: 167px;" href="https://github.com/SantiagortegaDev"
                 target="_blank"><span>Github</span></a> <a class="buttonmc" target="_blank" style="width: 167px;"
@@ -127,13 +152,17 @@
 
         <img src="/title3.png" style="width: 18%;">
         <p>Hi, i'm a programmer, i like build thinks, i really like <br>make discord bots, i know a ia can make it or are <br>not too useful but, i really love program discord bots<br>also robotics with some components i have, recently<br>i made a music player but with wifi and bluetooth with the esp32,<br>it's soo coool</p>
-        <a class="buttonmc" href="#top"><span>Volver</span></a>
+        <a class="buttonmc" href="#top"><span>Title Menu</span></a>
     </section>
 
     <section class="section" id="projects">
         <img src="/title4.png" style="width: 20%;">
-        <p>...</p>
-        <a class="buttonmc" href="#top"><span>Volver</span></a>
+        <div class="list">
+        <p>- <a href="https://uiscraft.top" target="_blank">Uiscraft.top</a>:<br> is a eaglecraft port to play minecraft in your browser</p>
+        
+        <p>- <a href="https://miniqr.santiagortega.dev/" target="_blank">Mini Qr</a>:<br> a discord bot and api to generate beautiful qr codes in ascii</p>
+        </div>
+        <a class="buttonmc" href="#top"><span>Title Menu</span></a>
     </section>
 
     <section class="section" id="items">
@@ -146,7 +175,7 @@
     <img src="https://static.wikia.nocookie.net/minecraft/images/6/62/Piston.png/revision/latest/scale-to-width/360?cb=20190925183243" alt="Piston">
 </div>
 <p>I'm not a redstoner but i like the redstone</p>
-        <a class="buttonmc" href="#top"><span>Volver</span></a>
+        <a class="buttonmc" href="#top"><span>Title Menu</span></a>
     </section>
 
     <script type="module">
